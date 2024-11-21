@@ -5,19 +5,19 @@
 }
 
 body {
-  margin: 0;
   display: flex;
-  background-color: gray;
+  flex-direction: column;
+  margin: 0;
   padding: 20px;
   font-family: 'Proxima Nova', sans-serif;
-  flex-direction: column;
+  background-color: gray;
 }
 
 .author {
   display: flex;
-  margin: 24px 24px 0;
-  min-height: 40px;
   align-items: center;
+  min-height: 40px;
+  margin: 24px 24px 0;
 
   &__avatar {
     width: 32px;
@@ -36,54 +36,54 @@ body {
     display: flex;
     flex-direction: column;
     min-width: 233px;
-    gap: 2px;
-    margin-right: auto;
     margin-top: 3px;
+    margin-right: auto;
+    gap: 2px;
   }
 
   &__info-name {
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 16px;
-    color: rgb(0 0 0 / 0.8);
     margin: 0;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 600;
+    color: rgb(0 0 0 / 0.8);
   }
 
   &__info-statistic {
     margin: 0;
     font-size: 14px;
-    font-weight: 400;
     line-height: 16px;
+    font-weight: 400;
     color: rgb(0 0 0 / 0.4);
   }
 
   &__statictics {
     display: flex;
-    list-style: none;
     flex-direction: row;
+    list-style: none;
+    width: 368px;
+    min-height: 40px;
     margin: 0;
     padding: 0;
     gap: 12px;
-    min-height: 40px;
-    width: 368px;
   }
 
   &__statictics-item {
+    position: relative;
     display: flex;
     flex-direction: column;
-    gap: 8px;
     min-width: 64px;
-    position: relative;
+    gap: 8px;
   }
 
   &__statictics-item::after {
     content: "";
+    position: absolute;
+    top: 50%;
     display: block;
     width: 100%;
     height: 1px;
     background-color: rgb(0 0 0 / 0.1);
-    position: absolute;
-    top: 50%;
     transform: translateY(-50%);
   }
 }
@@ -93,8 +93,8 @@ body {
   &__content {
     margin: 0;
     font-size: 14px;
-    font-weight: 600;
     line-height: 16px;
+    font-weight: 600;
 
     &--small {
       font-size: 12px;
@@ -115,8 +115,8 @@ body {
   }
 
   &__title--small {
-    font-weight: 400;
     margin-top: 2px;
+    font-weight: 400;
   }
 }
 
@@ -127,84 +127,84 @@ body {
   min-height: 354px;
   margin: auto;
   margin-top: 100px;
+  padding-bottom: 16px;
   background-color: white;
   border-radius: 8px;
-  padding-bottom: 16px;
 
   &__content {
+    position: relative;
     margin: 40px 24px 0;
     padding-bottom: 24px;
-    position: relative;
 
     &::before {
       content: "";
+      position: absolute;
+      top: -20px;
       display: block;
       width: 100%;
       height: 1px;
-      position: absolute;
       background-color: rgb(0 0 0 / 0.1);
-      top: -20px;
     }
   }
 
   &__content-text {
-    margin: 0;
-    max-height: 120px;
     position: relative;
     overflow-y: hidden;
+    max-height: 120px;
+    margin: 0;
     font-size: 16px;
-    font-weight: 400;
     line-height: 24px;
+    font-weight: 400;
     color: rgb(0 0 0 / 0.6);
 
 
     &::after {
       content: "";
+      position: absolute;
+      bottom: 0;
+      z-index: 1;
       display: block;
       width: 100%;
       height: 27px;
-      transition: opacity 0.3s ease-in-out;
-      position: absolute;
       background: linear-gradient(180deg, rgb(255 255 255 / 0) 30%, rgb(255 255 255 / 1));
-      bottom: 0;
-      z-index: 1;
+      transition: opacity 0.3s ease-in-out;
     }
   }
 
   &__content-btn {
-    width: 40px;
-    z-index: 2;
-    height: 40px;
     position: absolute;
     right: 50%;
-    transform: translateX(50%);
     bottom: -20px;
-    font-size: 0;
+    z-index: 2;
+    width: 40px;
+    height: 40px;
     margin: 0;
     padding: 0;
+    font-size: 0;
+    cursor: pointer;
+    background-color: rgb(255 255 255 / 1);
+    background-image: url("../images/icons/arrow.svg");
+    background-position: center;
+    background-repeat: no-repeat;
     border: none;
     border-radius: 100%;
-    background-color: rgb(255 255 255 / 1);
+    transform: translateX(50%);
     box-shadow: 2px 4px 12px 0 rgb(0 0 0 / 0.08);
-    background-image: url("../images/icons/arrow.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    cursor: pointer;
   }
 
   &__footer {
+    display: flex;
     width: 100%;
     min-height: 80px;
+    padding: 24px 24px 24px 22px;
     background-color: rgb(240 241 242 / 0.4);
     border-left: 2px solid rgb(52 152 219 / 1);
-    padding: 24px 24px 24px 22px;
-    display: flex;
   }
 
   &__footer-info {
-    margin-right: auto;
     display: flex;
     flex-direction: column;
+    margin-right: auto;
     gap: 8px;
   }
 
@@ -215,30 +215,30 @@ body {
 
   &__footer-title {
     font-size: 12px;
-    font-weight: 600;
     line-height: 14px;
-    color: rgb(0 0 0 / 0.4);
+    font-weight: 600;
     text-transform: uppercase;
+    color: rgb(0 0 0 / 0.4);
   }
 
   &__footer-text {
     font-size: 18px;
-    font-weight: 600;
     line-height: 20px;
+    font-weight: 600;
     color: rgb(0 0 0 / 0.8);
   }
 
   &__footer-bookmaker {
     display: flex;
     align-items: center;
-    gap: 12px;
     margin-right: 20px;
+    gap: 12px;
   }
 
   &__footer-bookmaker-link {
-    font-size: 0;
     margin: 0;
     padding: 0;
+    font-size: 0;
   }
 
   &__footer-bookmaker-title,
@@ -248,8 +248,8 @@ body {
 
   &__footer-bookmaker-title {
     font-size: 12px;
-    font-weight: 400;
     line-height: 14px;
+    font-weight: 400;
     color: rgb(51 51 51 / 1);
 
     span:nth-of-type(2) {
@@ -259,8 +259,8 @@ body {
 
   &__footer-bookmaker-text {
     font-size: 20px;
-    font-weight: 600;
     line-height: 24px;
+    font-weight: 600;
     color: rgb(0 0 0 / 0.8);
   }
 
@@ -268,14 +268,14 @@ body {
     width: 140px;
     height: 40px;
     padding: 12px 16px;
-    border-radius: 4px;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
     background-color: rgb(52 152 219 / 1);
     border: none;
-    color: white;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 16px;
-    cursor: pointer;
+    border-radius: 4px;
   }
 }
 
@@ -328,9 +328,9 @@ body {
     }
 
     &__footer-bookmaker {
-      gap: 8px;
       max-width: 90px;
       margin-right: 0;
+      gap: 8px;
     }
 
     &__footer-bookmaker-title {
@@ -356,8 +356,8 @@ body {
 
 
   .author {
-    margin: 16px 16px 0;
     min-height: 32px;
+    margin: 16px 16px 0;
 
     &__right {
       flex-direction: column;
@@ -366,8 +366,8 @@ body {
     }
 
     &__info {
-      margin-top: 0;
       flex-direction: row;
+      margin-top: 0;
       margin-right: 0;
     }
 
