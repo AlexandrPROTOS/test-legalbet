@@ -354,7 +354,7 @@ body {
 .forecast-item__content-text {
   transition: max-height 0.3s ease-in-out;
 }
-.forecast-item__content-text.expanded ::after {
+.forecast-item__content-text.expanded::after {
   opacity: 0;
 }
 .forecast-item__content-text.expanded + .forecast-item__content-btn {
