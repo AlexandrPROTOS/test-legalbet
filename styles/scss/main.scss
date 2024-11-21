@@ -5,11 +5,12 @@
 }
 
 body {
-    margin: 0;
-    display: flex;
-    background-color: gray;
-    padding: 20px;
-    font-family: 'Proxima Nova', sans-serif;
+  margin: 0;
+  display: flex;
+  background-color: gray;
+  padding: 20px;
+  font-family: 'Proxima Nova', sans-serif;
+  flex-direction: column;
 }
 
 .author {

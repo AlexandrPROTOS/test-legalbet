@@ -11,6 +11,7 @@ body {
   background-color: gray;
   padding: 20px;
   font-family: "Proxima Nova", sans-serif;
+  flex-direction: column;
 }
 
 .author {

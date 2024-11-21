@@ -23,7 +23,47 @@ const mockForecasts = [{
             coefficient: 3.20
         }
     }
+},
+{
+    author: {
+        avatar: "./images/main_img/face.jpg",
+        name: "Игорь Хорошилов",
+        statistics: {
+            wins: 100,
+            draws: 5,
+            losses: 88,
+            roi: 10,
+            profit: 500
+        }
+    },
+    content: {
+        text: "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    footer: {
+        prediction: {
+            title: "Прогноз",
+            text: "Первый раунд: тотал меньше 5"
+        },
+        bookmaker: {
+            logo: "./images/main_img/1Хstavka.jpg",
+            coefficient: 5.20
+        }
+    }
 }]
+
+function openFullText(clone) {
+    const expandBtn = clone.querySelector('.forecast-item__content-btn');
+    const contentText = clone.querySelector('.forecast-item__content-text');
+
+    expandBtn.addEventListener('click', () => {
+        contentText.style.maxHeight = `${contentText.scrollHeight}px`;
+        contentText.classList.toggle('expanded');
+
+        if (!contentText.classList.contains('expanded')) {
+            contentText.style.maxHeight = '';
+        }
+    });
+}
 
 function renderForecasts() {
     const template = document.getElementById('forecast-item');
@@ -51,25 +91,13 @@ function renderForecasts() {
         clone.querySelector('.forecast-item__footer-bookmaker-img').src = forecast.footer.bookmaker.logo;
         clone.querySelector('.forecast-item__footer-bookmaker-text').textContent = forecast.footer.bookmaker.coefficient;
         
+        // Open full text
+        openFullText(clone);
+
         container.appendChild(clone);
-    });
-}
-
-function openFullText() {
-    const expandBtn = document.querySelector('.forecast-item__content-btn');
-    const contentText = document.querySelector('.forecast-item__content-text');
-
-    expandBtn.addEventListener('click', () => {
-        contentText.style.maxHeight = `${contentText.scrollHeight}px`;
-        contentText.classList.toggle('expanded');
-
-        if (!contentText.classList.contains('expanded')) {
-            contentText.style.maxHeight = '';
-        }
     });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     renderForecasts()
-    openFullText()
 });
