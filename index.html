@@ -12,62 +12,62 @@
     <template id="forecast-item">
         <section class="forecast-item">
             <div class="forecast-item__author author">
-                <img src="" alt="author avatar" class="author__avatar">
+                <img src="" alt="author avatar" class="author__avatar" data-avatar>
                 <div class="author__right">
                     <div class="author__info">
-                        <p class="author__info-name"></p>
+                        <p class="author__info-name" data-name></p>
                         <p class="author__info-statistic"><span>Статистика за последние </span>30 дней</p>
                     </div>
                     <ul class="author__statictics">
                         <li class="author__statictics-item item">
                             <span class="item__title item__title--green">+</span>
-                            <span class="item__content item__content--green"></span>
+                            <span class="item__content item__content--green" data-wins></span>
                         </li>
 
                         <li class="author__statictics-item item">
                             <span class="item__title item__title--grey">=</span>
-                            <span class="item__content item__content--grey"></span>
+                            <span class="item__content item__content--grey" data-draws></span>
                         </li>
 
                         <li class="author__statictics-item item">
                             <span class="item__title item__title--red">—</span>
-                            <span class="item__content item__content--red"></span>
+                            <span class="item__content item__content--red" data-losses></span>
                         </li>
 
                         <li class="author__statictics-item item">
                             <span class="item__title item__title--small">ROI, %</span>
                             <span class="item__content item__content--green">
                                 <span class="mobile-only">ROI </span>
-                                <span class="roi-number"></span>
+                                <span class="roi-number" data-roi></span>
                         </li>
 
                         <li class="author__statictics-item item">
                             <span class="item__title item__title--small">Прибыль</span>
-                            <span class="item__content item__content--green"></span>
+                            <span class="item__content item__content--green" data-profit></span>
                         </li>
                     </ul>
                 </div>
             </div>
 
             <div class="forecast-item__content">
-                <p class="forecast-item__content-text"></p>
+                <p class="forecast-item__content-text" data-contentText></p>
                 <button type="button" class="forecast-item__content-btn"></button>
             </div>
             <div class="forecast-item__footer">
                 <div class="forecast-item__footer-info">
                     <p class="forecast-item__footer-title">Прогноз</p>
-                    <p class="forecast-item__footer-text">Штрафное время: тотал меньше 16,5</p>
+                    <p class="forecast-item__footer-text" data-footerText>Штрафное время: тотал меньше 16,5</p>
                 </div>
                 <div class="forecast-item__footer-bookmaker">
                     <a class="forecast-item__footer-bookmaker-link" href="#">
-                        <img src="" alt="1xbet" class="forecast-item__footer-bookmaker-img">
+                        <img src="" alt="1xbet" class="forecast-item__footer-bookmaker-img" data-bookImg>
                     </a>
                     <div class="forecast-item__footer-bookmaker-info">
                         <p class="forecast-item__footer-bookmaker-title">
                             <span>Коэффициент</span>
                             <span>Кэф</span>
                         </p>
-                        <span class="forecast-item__footer-bookmaker-text"></span>
+                        <span class="forecast-item__footer-bookmaker-text" data-bookName></span>
                     </div>
                 </div>
                 <button class="forecast-item__footer-bookmaker-btn" type="button">Сделать ставку</button>

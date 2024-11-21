@@ -42,7 +42,7 @@ const mockForecasts = [{
     footer: {
         prediction: {
             title: "Прогноз",
-            text: "Первый раунд: тотал меньше 5"
+            text: "Первый раунд: тотал больше 5"
         },
         bookmaker: {
             logo: "./images/main_img/1Хstavka.jpg",
@@ -69,27 +69,27 @@ function renderForecasts() {
     const template = document.getElementById('forecast-item');
     const container = document.body;
 
-    mockForecasts.forEach(forecast => {
+    mockForecasts.forEach(({author, content, footer}) => {
         const clone = template.content.cloneNode(true);
         
         // Fill author info
-        clone.querySelector('.author__info-name').textContent = forecast.author.name;
-        clone.querySelector('.author__avatar').src = forecast.author.avatar;
+        clone.querySelector('[data-avatar]').src = author.avatar;
+        clone.querySelector('[data-name]').textContent = author.name;
         
         // Fill statistics
-        clone.querySelector('.item__content--green').textContent = forecast.author.statistics.wins;
-        clone.querySelector('.item__content--grey').textContent = forecast.author.statistics.draws;
-        clone.querySelector('.item__content--red').textContent = forecast.author.statistics.losses;
-        clone.querySelector('.item__content--green span:last-child').textContent = `${forecast.author.statistics.roi}%`;
-        clone.querySelector('.item:last-child .item__content--green').textContent = `+${forecast.author.statistics.profit}`;
+        clone.querySelector('[data-wins]').textContent = author.statistics.wins;
+        clone.querySelector('[data-draws]').textContent = author.statistics.draws;
+        clone.querySelector('[data-losses]').textContent = author.statistics.losses;
+        clone.querySelector('[data-roi]').textContent = `${author.statistics.roi}%`;
+        clone.querySelector('[data-profit]').textContent = `+${author.statistics.profit}`;
         
         // Fill content
-        clone.querySelector('.forecast-item__content-text').textContent = forecast.content.text;
+        clone.querySelector('[data-contentText]').textContent = content.text;
         
         // Fill footer
-        clone.querySelector('.forecast-item__footer-text').textContent = forecast.footer.prediction.text;
-        clone.querySelector('.forecast-item__footer-bookmaker-img').src = forecast.footer.bookmaker.logo;
-        clone.querySelector('.forecast-item__footer-bookmaker-text').textContent = forecast.footer.bookmaker.coefficient;
+        clone.querySelector('[data-footerText]').textContent = footer.prediction.text;
+        clone.querySelector('[data-bookImg]').src = footer.bookmaker.logo;
+        clone.querySelector('[data-bookName]').textContent = footer.bookmaker.coefficient;
         
         // Open full text
         openFullText(clone);
