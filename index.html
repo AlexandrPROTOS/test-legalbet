@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Легалбет - тестовое</title>
+    <link rel="stylesheet" href="./styles/vendor/normalize.css">
+    <link rel="stylesheet" href="./styles/fonts.css">
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+    <template id="forecast-item">
+        <section class="forecast-item">
+            <div class="forecast-item__author author">
+                <img src="" alt="author avatar" class="author__avatar">
+                <div class="author__right">
+                    <div class="author__info">
+                        <p class="author__info-name"></p>
+                        <p class="author__info-statistic"><span>Статистика за последние </span>30 дней</p>
+                    </div>
+                    <ul class="author__statictics">
+                        <li class="author__statictics-item item">
+                            <span class="item__title item__title--green">+</span>
+                            <span class="item__content item__content--green"></span>
+                        </li>
+
+                        <li class="author__statictics-item item">
+                            <span class="item__title item__title--grey">=</span>
+                            <span class="item__content item__content--grey"></span>
+                        </li>
+
+                        <li class="author__statictics-item item">
+                            <span class="item__title item__title--red">—</span>
+                            <span class="item__content item__content--red"></span>
+                        </li>
+
+                        <li class="author__statictics-item item">
+                            <span class="item__title item__title--small">ROI, %</span>
+                            <span class="item__content item__content--green">
+                                <span class="mobile-only">ROI </span>
+                                <span class="roi-number"></span>
+                        </li>
+
+                        <li class="author__statictics-item item">
+                            <span class="item__title item__title--small">Прибыль</span>
+                            <span class="item__content item__content--green"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="forecast-item__content">
+                <p class="forecast-item__content-text"></p>
+                <button type="button" class="forecast-item__content-btn"></button>
+            </div>
+            <div class="forecast-item__footer">
+                <div class="forecast-item__footer-info">
+                    <p class="forecast-item__footer-title">Прогноз</p>
+                    <p class="forecast-item__footer-text">Штрафное время: тотал меньше 16,5</p>
+                </div>
+                <div class="forecast-item__footer-bookmaker">
+                    <a class="forecast-item__footer-bookmaker-link" href="#">
+                        <img src="" alt="1xbet" class="forecast-item__footer-bookmaker-img">
+                    </a>
+                    <div class="forecast-item__footer-bookmaker-info">
+                        <p class="forecast-item__footer-bookmaker-title">
+                            <span>Коэффициент</span>
+                            <span>Кэф</span>
+                        </p>
+                        <span class="forecast-item__footer-bookmaker-text"></span>
+                    </div>
+                </div>
+                <button class="forecast-item__footer-bookmaker-btn" type="button">Сделать ставку</button>
+            </div>
+        </div>
+    </template>
+    <script src="./js/script.js"></script>
+</body>
+</html>
